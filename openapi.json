@@ -21,7 +21,7 @@
     }
   ],
   "paths": {
-    "/book/add": {
+    "/v1/book/add": {
       "post": {
         "tags": ["book"],
         "summary": "Add a book to the database",
@@ -54,7 +54,7 @@
         }
       }
     },
-    "/book/all": {
+    "/v1/book/all": {
       "get": {
         "tags": ["book"],
         "summary": "Get all books in database",
@@ -83,7 +83,7 @@
         }
       }
     },
-    "/book/search": {
+    "/v1/book/search": {
       "get": {
         "tags": ["book"],
         "summary": "Search books by name or author",
