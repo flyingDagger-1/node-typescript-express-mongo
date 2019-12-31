@@ -17,7 +17,7 @@ if (config.MONGO_URL == undefined) {
     app.listen(app.get('port'), (): void => {
       logger.info(`*\t🌏 Express server started at http://localhost:${app.get('port')}\t\t*`);
       if (config.isDevelopment) {
-        logger.debug(`*\t⚙️  Swagger UI hosted at http://localhost:${app.get('port')}/dev/api-docs\t*`);
+        logger.debug(`*\t⚙️  Swagger UI hosted at http://localhost:${app.get('port')}/__VERSION__/dev/api-docs\t*`);
       }
     });
   });

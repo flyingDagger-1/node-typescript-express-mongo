@@ -11,7 +11,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000/"
+      "url": "http://localhost:3000/v1/"
     }
   ],
   "tags": [
@@ -21,7 +21,7 @@
     }
   ],
   "paths": {
-    "/v1/book/add": {
+    "/book/add": {
       "post": {
         "tags": ["book"],
         "summary": "Add a book to the database",
@@ -54,7 +54,7 @@
         }
       }
     },
-    "/v1/book/all": {
+    "/book/all": {
       "get": {
         "tags": ["book"],
         "summary": "Get all books in database",
@@ -83,7 +83,7 @@
         }
       }
     },
-    "/v1/book/search": {
+    "/book/search": {
       "get": {
         "tags": ["book"],
         "summary": "Search books by name or author",
