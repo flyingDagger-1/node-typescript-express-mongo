@@ -38,7 +38,7 @@ export default class MongoConnection {
     if (onConnectedCallback) {
       this.onConnectedCallback = onConnectedCallback;
     }
-    mongoose.connect(this.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true }, () => {});
+    mongoose.connect(this.mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true });
   }
 
   /**
