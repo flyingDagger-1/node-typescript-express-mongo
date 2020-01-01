@@ -1,4 +1,5 @@
 import { Request } from 'jest-express/lib/request';
+
 import handleErrorMiddleware from '../../src/middleware/handle-error-middleware';
 
 let request: any;

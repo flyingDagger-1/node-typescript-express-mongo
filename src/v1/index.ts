@@ -1,6 +1,8 @@
 import { Router } from 'express';
 import swaggerUi from 'swagger-ui-express';
+
 import config from '../config/config';
+
 import * as BookController from './controllers/book';
 import apiSpec from './openapi.json';
 

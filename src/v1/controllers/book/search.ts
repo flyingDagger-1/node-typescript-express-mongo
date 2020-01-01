@@ -1,4 +1,5 @@
 import { RequestHandler } from 'express';
+
 import handleErrorMiddleware from '../../../middleware/handle-error-middleware';
 import Book from '../../../models/Book';
 
@@ -8,7 +9,7 @@ import Book from '../../../models/Book';
  * @param author String containing the author name or part of the author's name
  */
 const buildBookSeachQuery = (name: string, author: string) => {
-  const query: any = {};
+  const query: { [key: string]: string | RegExp } = {};
   if (name) {
     query.name = new RegExp(`.*${name}.*`, 'i');
   }

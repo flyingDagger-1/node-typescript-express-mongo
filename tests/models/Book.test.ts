@@ -1,6 +1,5 @@
-import request from 'supertest';
 import mockingoose from 'mockingoose';
-import app from '../../src/app';
+
 import BookModel from '../../src/models/Book';
 
 describe('test mongoose User model', () => {
