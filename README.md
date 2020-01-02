@@ -88,35 +88,61 @@ The application uses [winston](https://github.com/winstonjs/winston) as the defa
 ### Directory Structure
 
 ```sh
-+-- scripts
-|   +-- dev.sh
-+-- src
-|   +-- controllers
-|   |   +-- book
-|   |   |   +-- add.ts
-|   |   |   +-- all.ts
-|   |   |   +-- index.ts
-|   |   |   +-- search.ts
-|   +-- middleware
-|   |   +-- handle-error-middleware.ts
-|   +-- models
-|   |   +-- Book.ts
-|   +-- app.ts
-|   +-- mongo-connection.ts
-|   +-- routes.ts
-|   +-- server.ts
-+-- .env
-+-- .env.example
-+-- .eslintrc.js
-+-- .gitignore
-+-- .prettierrc.js
-+-- docker-compose.dev.yml
-+-- docker-compose.yml
-+-- Dockerfile
-+-- nodemon.json
-+-- openapi.json
-+-- package-lock.json
-+-- package.json
-+-- README.md
-+-- tsconfig.json
+├── .vscode
+│   └── settings.json
+├── scripts
+│   └── dev.sh
+├── src
+│   ├── config
+│   │   └── config.ts
+│   ├── db
+│   │   └── mongo
+│   │       └── connection.ts
+│   ├── errors
+│   │   └── index.ts
+│   ├── middleware
+│   │   └── handle-error-middleware.ts
+│   ├── models
+│   │   └── Book.ts
+│   ├── public
+│   │   └── index.html
+│   ├── services
+│   │   ├── jwt.ts
+│   │   └── password.ts
+│   ├── v1
+│   │   ├── controllers
+│   │   │   └── book
+│   │   │       ├── add.ts
+│   │   │       ├── all.ts
+│   │   │       ├── index.ts
+│   │   │       └── search.ts
+│   │   ├── index.ts
+│   │   └── openapi.json
+│   ├── app.ts
+│   ├── logger.ts
+│   ├── routes.ts
+│   └── server.ts
+├── tests
+│   ├── errors
+│   │   └── ApplicationError.test.ts
+│   ├── middleware
+│   │   └── handle-error-middleware.test.ts
+│   ├── models
+│   │   └── Book.test.ts
+│   └── app.test.ts
+├── .env
+├── .env.example
+├── .eslintrc.js
+├── .gitignore
+├── .prettierrc.js
+├── .travis.yml
+├── Dockerfile
+├── README.md
+├── docker-compose.dev.yml
+├── docker-compose.yml
+├── jest.config.js
+├── nodemon.json
+├── package-lock.json
+├── package.json
+└── tsconfig.json
 ```
