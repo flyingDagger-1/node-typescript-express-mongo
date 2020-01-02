@@ -67,11 +67,14 @@ npm run build && npm run start
 
 To edit environment variables, create a file with name `.env` and copy the contents from `.env.example` to start with.
 
-| Var Name  | Type   | Default                           | Description                            |
-| --------- | ------ | --------------------------------- | -------------------------------------- |
-| NODE_ENV  | string | `development`                     | API runtime environment. eg: `staging` |
-| PORT      | number | `3000`                            | Port to run the API server on          |
-| MONGO_URL | string | `mongodb://localhost:27017/books` | URL for MongoDB                        |
+| Var Name                  | Type   | Default                           | Description                             |
+| ------------------------- | ------ | --------------------------------- | --------------------------------------- |
+| NODE_ENV                  | string | `development`                     | API runtime environment. eg: `staging`  |
+| PORT                      | number | `3000`                            | Port to run the API server on           |
+| MONGO_URL                 | string | `mongodb://localhost:27017/books` | URL for MongoDB                         |
+| SECRET_HEX                | string | `827d263847500d926a520b...`       | HEX string to secure JWT                |
+| ACCESS_TOKEN_LIFETIME_MIN | number | `60`                              | Access token TTL in mins                |
+| BCRYPT_N_ROUNDS           | number | `100`                             | Number of round to generate Bcrypt salt |
 
 ## Logging
 
