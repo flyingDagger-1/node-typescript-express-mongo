@@ -37,7 +37,7 @@ npm run dev
 Running the above commands results in
 
 - 🌏**API Server** running at `http://localhost:3000`
-- ⚙️**Swagger UI** at `http://localhost:3000/dev/api-docs`
+- ⚙️**Swagger UI** at `http://localhost:3000/__VERSION__/dev/api-docs`
 - 🛢️**MongoDB** running at `mongodb://localhost:27017`
 
 ## Packaging and Deployment
