@@ -6,6 +6,7 @@ type Environment = {
   MONGO_URL: string;
   SECRET_HEX: string;
   ACCESS_TOKEN_LIFETIME_MIN: number;
+  BCRYPT_N_ROUNDS: number;
 };
 
 const strHex64 = makeValidator<string>(x => {
@@ -23,6 +24,7 @@ const config: Config = cleanEnv<Environment>(process.env, {
   MONGO_URL: url(),
   SECRET_HEX: strHex64(),
   ACCESS_TOKEN_LIFETIME_MIN: num(),
+  BCRYPT_N_ROUNDS: num(),
 });
 
 export default config;
