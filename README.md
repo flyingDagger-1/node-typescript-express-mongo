@@ -65,7 +65,7 @@ npm run build && npm run start
 
 ## Environment
 
-To edit environment variables, create a file with name `.env` and copy the contents from `.env.default` to start with.
+To edit environment variables, create a file with name `.env` and copy the contents from `.env.example` to start with.
 
 | Var Name  | Type   | Default                           | Description                            |
 | --------- | ------ | --------------------------------- | -------------------------------------- |
@@ -103,7 +103,7 @@ The application uses [winston](https://github.com/winstonjs/winston) as the defa
 |   +-- routes.ts
 |   +-- server.ts
 +-- .env
-+-- .env.default
++-- .env.example
 +-- .eslintrc.js
 +-- .gitignore
 +-- .prettierrc.js
