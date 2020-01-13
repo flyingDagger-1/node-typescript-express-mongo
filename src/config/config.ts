@@ -10,6 +10,11 @@ type Environment = {
   ACCESS_TOKEN_LIFETIME_MIN: number;
   BCRYPT_N_ROUNDS: number;
   WHITELIST_ORIGINS: string[];
+  SMTP_USER: string;
+  SMTP_PASS: string;
+  SMTP_PORT: number;
+  SMTP_HOST: string;
+  SMTP_FROM_EMAIL: string;
 };
 
 const strHex64 = makeValidator<string>(x => {
@@ -46,6 +51,11 @@ const config: Config = cleanEnv<Environment>(process.env, {
   ACCESS_TOKEN_LIFETIME_MIN: num(),
   BCRYPT_N_ROUNDS: num(),
   WHITELIST_ORIGINS: origins(),
+  SMTP_USER: str(),
+  SMTP_PASS: str(),
+  SMTP_PORT: num(),
+  SMTP_HOST: str(),
+  SMTP_FROM_EMAIL: str(),
 });
 
 export default config;
