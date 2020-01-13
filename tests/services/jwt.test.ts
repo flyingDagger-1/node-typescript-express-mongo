@@ -3,7 +3,7 @@ import config from '../../src/config/config';
 
 const payload = { id: '507f191e810c19729de860ea' };
 const token =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUwN2YxOTFlODEwYzE5NzI5ZGU4NjBlYSIsImlhdCI6MTU3Nzk2NTUwOCwiZXhwIjozMTU1OTM0NjE2fQ.C2kEK2lyG_Oclik0OVjGA75IIOUJw9A1E8qAWTtMTaI';
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjUwN2YxOTFlODEwYzE5NzI5ZGU4NjBlYSIsImlhdCI6MTU3ODkyMTgxMywiZXhwIjozMTU3ODQ3MjI2fQ.olGOIjPPIcQUpPxo6tPFb00qD9trrMPWCrtkQ876-BY';
 
 describe('test JWT service', () => {
   let JWTService: JWT;

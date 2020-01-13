@@ -1,6 +1,6 @@
 import mockingoose from 'mockingoose';
 
-import UserModel from '../../src/models/User';
+import User from '../../src/models/User';
 
 describe('test mongoose User model', () => {
   test('should return the doc with findById', () => {
@@ -13,9 +13,9 @@ describe('test mongoose User model', () => {
 
     const { password, ...returnDoc } = _doc;
 
-    mockingoose(UserModel).toReturn(_doc, 'findOne');
+    mockingoose(User).toReturn(_doc, 'findOne');
 
-    return UserModel.findById({ _id: '507f191e810c19729de860ea' }).then(doc => {
+    return User.findById({ _id: '507f191e810c19729de860ea' }).then(doc => {
       expect(JSON.parse(JSON.stringify(doc))).toMatchObject(returnDoc);
     });
   });

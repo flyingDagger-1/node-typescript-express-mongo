@@ -15,6 +15,8 @@ const swaggerUiOptions = {
   customCss: '.swagger-ui .topbar { display: none }',
 };
 
+router.get('/status', (req, res) => res.json({ status: 'UP' }));
+
 router.post('/auth/login', AuthController.login);
 router.post('/auth/signup', AuthController.signup);
 

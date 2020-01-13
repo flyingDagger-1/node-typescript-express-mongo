@@ -1,6 +1,6 @@
 import mockingoose from 'mockingoose';
 
-import BookModel from '../../src/models/Book';
+import Book from '../../src/models/Book';
 
 describe('test mongoose User model', () => {
   test('should return the doc with findById', () => {
@@ -10,9 +10,9 @@ describe('test mongoose User model', () => {
       author: 'author',
     };
 
-    mockingoose(BookModel).toReturn(_doc, 'findOne');
+    mockingoose(Book).toReturn(_doc, 'findOne');
 
-    return BookModel.findById({ _id: '507f191e810c19729de860ea' }).then(doc => {
+    return Book.findById({ _id: '507f191e810c19729de860ea' }).then(doc => {
       expect(JSON.parse(JSON.stringify(doc))).toMatchObject(_doc);
     });
   });

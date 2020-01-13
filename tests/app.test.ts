@@ -1,19 +1,18 @@
 import request from 'supertest';
 
 import app from '../src/app';
-jest.mock('../src/models/Book');
 
 describe('App Test', () => {
   test('GET /random-url should return 404', async done => {
     await request(app)
-      .get('/reset')
+      .get('/random-url')
       .expect(404);
     done();
   });
 
-  test('GET /book/all should return 200', done => {
+  test('GET /v1/status should return 200', done => {
     request(app)
-      .get('/book/all')
+      .get('/v1/status')
       .expect(200, done);
   });
 });
