@@ -3,9 +3,11 @@ import moment from 'moment';
 
 import handleErrorMiddleware from '../../../middleware/handle-error';
 import User from '../../../models/User';
-import { signPayload } from '../../../services/jwt';
+import { JWT } from '../../../services/jwt';
 import config from '../../../config/config';
 import { IBodyRequest } from '../../../interfaces/request';
+
+const JWTService = new JWT(config);
 
 type ILoginRequest = IBodyRequest<{ email: string; password: string }>;
 
@@ -22,7 +24,7 @@ let login: RequestHandler = async (req: ILoginRequest, res) => {
     res.sendStatus(401);
   }
 
-  const token = await signPayload({ id: user.id });
+  const token = await JWTService.signPayload({ id: user.id });
   const options: CookieOptions = {
     expires: moment()
       .add(config.ACCESS_TOKEN_LIFETIME_MIN, 'minutes')

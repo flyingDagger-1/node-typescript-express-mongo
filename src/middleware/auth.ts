@@ -1,9 +1,12 @@
 import { RequestHandler } from 'express';
 
+import config from '../config/config';
 import { WrongAuthenticationTokenError, AuthenticationTokenMissingError } from '../errors';
 import User from '../models/User';
 import { IAuthenticateRequest } from '../interfaces/request';
-import { verifyToken } from '../services/jwt';
+import { JWT } from '../services/jwt';
+
+const JWTService = new JWT(config);
 
 const authMiddleware: RequestHandler = async (req: IAuthenticateRequest, res, next) => {
   const cookies = req.cookies;
@@ -13,7 +16,7 @@ const authMiddleware: RequestHandler = async (req: IAuthenticateRequest, res, ne
   if (bearerToken) {
     try {
       const [, token] = bearerToken.split(' ');
-      const data = (await verifyToken(token)) as { [key: string]: string };
+      const data = (await JWTService.verifyToken(token)) as { [key: string]: string };
       if (data) {
         const user = await User.findById(data.id);
         if (!user) {
