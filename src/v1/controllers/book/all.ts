@@ -1,6 +1,6 @@
 import { RequestHandler } from 'express';
 
-import handleErrorMiddleware from '../../../middleware/handle-error-middleware';
+import handleErrorMiddleware from '../../../middleware/handle-error';
 import Book from '../../../models/Book';
 
 let all: RequestHandler = async (req, res) => {
