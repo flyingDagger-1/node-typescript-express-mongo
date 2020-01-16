@@ -1,3 +1,5 @@
+[![Build Status](https://github.com/peerbits-shrujal/node-typescript-express-mongo/workflows/Node%20CI/badge.svg)](https://github.com/peerbits-shrujal/node-typescript-express-mongo/actions?workflow=Node%20CI)
+
 # Express TypeScript Boilerplate
 
 This repo can be used as a starting point for backend development with Nodejs. It comes bundled with Docker and is CI/CD optimized. The development environment uses `docker-compose` to start dependent services like mongo.
