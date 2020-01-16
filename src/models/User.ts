@@ -1,10 +1,13 @@
 import { Document, Model, Schema, model, DocumentToObjectOptions } from 'mongoose';
 
-import { hashPassword, comparePassword } from '../services/password';
+import config from '../config/config';
+import { Password } from '../services/password';
+
+const passwordService = new Password(config);
 
 export enum UserRole {
-  'hr' = 'hr',
-  'interviewer' = 'interviewer',
+  'role1' = 'role1',
+  'role2' = 'role2',
 }
 
 export interface IUser {
@@ -42,13 +45,13 @@ schema.pre<IUserDocument>('save', async function(next) {
     return next();
   }
   const password = this.get('password');
-  const hash = await hashPassword(password);
+  const hash = await passwordService.hashPassword(password);
   this.set('password', hash);
   next();
 });
 
 schema.methods.comparePassword = async function(password: string): Promise<boolean> {
-  return await comparePassword(password, this.password);
+  return await passwordService.comparePassword(password, this.password);
 };
 
 const User: IUserModel = model<IUserDocument, IUserModel>('User', schema);
